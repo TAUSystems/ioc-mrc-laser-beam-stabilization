@@ -1,0 +1,9 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 4.5.3
+_src_path: gh:epics-containers/ioc-template
+description: Generic IOC for MRC active laser beam stabilization system
+git_platform: github.com
+github_org: TAUSystems
+name: ioc-mrc-laser-beam-stabilization
+repo_uri: git@github.com:TAUSystems/ioc-mrc-laser-beam-stabilization.git
+rtems: false
