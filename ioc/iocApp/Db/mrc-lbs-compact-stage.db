@@ -1,0 +1,16 @@
+record(bo, "$(P)$(R)StartSetAndHold") {
+    field(DESC, "Activate stage")
+    field(DTYP, "stream")
+    field(OUT, "@mrc-lbs-compact.proto startSetHold($(S)) $(PORT)")
+    field(ONAM, "Start")
+    field(ZNAM, "DoNotStart")
+}
+
+record(bo, "$(P)$(R)ClearSetAndHold") {
+    field(DESC, "Deactivate stage")
+    field(DTYP, "stream")
+    field(OUT, "@mrc-lbs-compact.proto clearSetHold($(S)) $(PORT)")
+    field(ONAM, "Stop")
+    field(ZNAM, "DoNotStop")
+}
+
