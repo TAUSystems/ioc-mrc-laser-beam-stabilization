@@ -39,8 +39,8 @@ RUN ansible.sh autosave
 COPY ibek-support/asyn/ asyn
 RUN ansible.sh asyn
 
-COPY ibek-support/StreamDevice/ StreamDevice
-RUN ansible.sh StreamDevice
+COPY ibek-support/mrc-laser-beam-stabilization/ mrc-laser-beam-stabilization
+RUN ansible.sh mrc-laser-beam-stabilization
 
 # get the ioc source and build it
 COPY ioc ${SOURCE_FOLDER}/ioc
