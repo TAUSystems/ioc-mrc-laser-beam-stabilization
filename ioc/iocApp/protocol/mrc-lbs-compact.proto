@@ -6,7 +6,7 @@ OutTerminator = ";";
 # closed loop stabilization. Activation of stage s. Position is stored in non-volatile 
 # memory
 startSetHold {
-    out "SSH\1";
+    out "SSH\$1";
     in "0";
     @mismatch { in "1"; }
 }
@@ -15,7 +15,7 @@ startSetHold {
 # Deactivation of stage s. Resets target position to “0” (default) on detector 
 # of stage s.
 clearSetHold {
-    out "CSH\1";
+    out "CSH\$1";
     in "0";
     @mismatch { in "1"; }
 }
