@@ -2,6 +2,6 @@ TOP = .
 include $(TOP)/configure/CONFIG
 
 DIRS += configure
-DIRS += iocApp/src
+DIRS += iocApp
 
 include $(TOP)/configure/RULES_TOP
