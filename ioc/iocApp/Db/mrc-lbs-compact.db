@@ -1,7 +1,8 @@
 record(mbbiDirect, "$(P)GetStatusFlag") {
     field(DESC, "Get status flag")
     field(DTYP, "stream")
-    field(OUT, "@mrc-lbs-compact.proto getStatusFlag $(PORT)")
+    field(INP, "@mrc-lbs-compact.proto getStatusFlag $(PORT)")
+    field(PINI, "YES")
 }
 
 record(stringin, "$(P)DebugLine1") {}
