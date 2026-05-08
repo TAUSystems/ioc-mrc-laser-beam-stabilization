@@ -20,13 +20,24 @@ clearSetHold {
     @mismatch { in "1"; }
 }
 
+# Set Adjust-In
+# This command allows to align the laser beam electronically. An offset o is 
+# added to the detector signal to shift the target position for the closed loop
+# stabilization. -5000 ≤ o ≤ 5000, o = 0 for external adjustment.
+# Value is stored in non-volatile memory.
+adjustIn {
+    out "SAI\$1\$2%.2r";
+    in "0";
+    @mismatch { in "1"; }
+}
+
 # Get Status Flag
 # Request for system status information
 # Returns unsigned char representing EF A2 A1 OnOff2 OnOff1 Adj2 Adj1 PF
 getStatusFlag {
     out "GSF";
     in "0";
-    in "%d";  
+    in "%01r";
 }
 
 # Connect a stringout record to this to get

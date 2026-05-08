@@ -1,4 +1,4 @@
-record(mbbiDirect, "$(P)$(R)GetStatusFlag") {
+record(mbbiDirect, "$(P)GetStatusFlag") {
     field(DESC, "Get status flag")
     field(DTYP, "stream")
     field(OUT, "@mrc-lbs-compact.proto getStatusFlag $(PORT)")

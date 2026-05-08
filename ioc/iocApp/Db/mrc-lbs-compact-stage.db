@@ -1,3 +1,7 @@
+# Start Set & Hold
+# Freezes the current position on detector of stage s as target position for 
+# closed loop stabilization. Activation of stage s. Position is stored in non-volatile 
+# memory
 record(bo, "$(P)$(R)StartSetAndHold") {
     field(DESC, "Activate stage")
     field(DTYP, "stream")
@@ -6,6 +10,9 @@ record(bo, "$(P)$(R)StartSetAndHold") {
     field(ZNAM, "DoNotStart")
 }
 
+# Clear Set & Hold
+# Deactivation of stage s. Resets target position to “0” (default) on detector 
+# of stage s.
 record(bo, "$(P)$(R)ClearSetAndHold") {
     field(DESC, "Deactivate stage")
     field(DTYP, "stream")
@@ -14,3 +21,21 @@ record(bo, "$(P)$(R)ClearSetAndHold") {
     field(ZNAM, "DoNotStop")
 }
 
+# Set Adjust-In
+# This command allows to align the laser beam electronically. An offset o is 
+# added to the detector signal to shift the target position for the closed loop
+# stabilization. -5000 ≤ o ≤ 5000, o = 0 for external adjustment.
+# Value is stored in non-volatile memory.
+record(longout, "$(P)$(R)AdjustInX") {
+    field(DESC, "Set Adjust-In X")
+    field(DTYP, "stream")
+    field(OUT, "@mrc-lbs-compact.proto adjustIn($(S),x) $(PORT)")
+    field(EGU, "mV")
+}
+
+record(longout, "$(P)$(R)AdjustInY") {
+    field(DESC, "Set Adjust-In Y")
+    field(DTYP, "stream")
+    field(OUT, "@mrc-lbs-compact.proto adjustIn($(S),y) $(PORT)")
+    field(EGU, "mV")
+}
