@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>MRC Compact</name>
+  <width>430</width>
+  <height>282</height>
+  <widget type="template" version="2.0.0">
+    <name>Template/Instance</name>
+    <file>mrc-lbs-compact-stage.bob</file>
+    <instances>
+      <instance>
+        <macros>
+          <P>$(P)</P>
+          <R>$(R1)</R>
+        </macros>
+      </instance>
+      <instance>
+        <macros>
+          <P>$(P)</P>
+          <R>$(R2)</R>
+        </macros>
+      </instance>
+    </instances>
+    <width>430</width>
+    <height>282</height>
+    <horizontal>true</horizontal>
+  </widget>
+</display>
