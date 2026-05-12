@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>MRC Compact Stage</name>
-  <width>210</width>
+  <width>190</width>
   <height>282</height>
   <widget type="label" version="2.0.0">
     <name>Title</name>
@@ -21,7 +21,7 @@
     <name>SetHold</name>
     <label>Set &amp; Hold</label>
     <y>20</y>
-    <width>210</width>
+    <width>130</width>
     <enabled>false</enabled>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -35,7 +35,7 @@
     </actions>
     <text>Start Set &amp; Hold</text>
     <y>50</y>
-    <width>110</width>
+    <width>130</width>
     <tooltip>$(actions)</tooltip>
   </widget>
   <widget type="action_button" version="3.0.0">
@@ -49,59 +49,52 @@
     </actions>
     <text>Clear Set &amp; Hold</text>
     <y>90</y>
-    <width>110</width>
+    <width>130</width>
     <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="byte_monitor" version="2.0.0">
-    <name>StatusFlag</name>
-    <pv_name>$(P)GetStatusFlag</pv_name>
-    <x>120</x>
-    <y>30</y>
-    <width>90</width>
-    <height>160</height>
-    <bitReverse>true</bitReverse>
-    <horizontal>false</horizontal>
-    <labels>
-      <text>PF</text>
-      <text>Adj1</text>
-      <text>Adj2</text>
-      <text>OnOff1</text>
-      <text>OnOff2</text>
-      <text>A1</text>
-      <text>A2</text>
-      <text>EF</text>
-    </labels>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Adjust-in</name>
     <y>130</y>
-    <width>120</width>
+    <width>190</width>
     <height>76</height>
     <transparent>true</transparent>
     <tooltip>Align the laser beam on detector</tooltip>
-    <widget type="textupdate" version="2.0.0">
-      <name>AdjustX</name>
-      <pv_name>$(P)$(R)AdjustInX</pv_name>
-      <x>20</x>
-      <width>62</width>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>AdjustY</name>
-      <pv_name>$(P)$(R)AdjustInY</pv_name>
-      <x>20</x>
-      <y>20</y>
-      <width>62</width>
-    </widget>
     <widget type="label" version="2.0.0">
-      <name>AdjustXLabel</name>
+      <name>AdjustInXLabel</name>
       <text>X</text>
       <width>10</width>
     </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>AdjustInX</name>
+      <pv_name>$(P)$(R)AdjustInX</pv_name>
+      <x>12</x>
+      <width>70</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>AdjustInX_RBV</name>
+      <pv_name>$(P)$(R)AdjustInX_RBV</pv_name>
+      <x>87</x>
+      <width>70</width>
+    </widget>
     <widget type="label" version="2.0.0">
-      <name>AdjustYLabel</name>
+      <name>AdjustInYLabel</name>
       <text>Y</text>
       <y>20</y>
       <width>10</width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>AdjustInY</name>
+      <pv_name>$(P)$(R)AdjustInY</pv_name>
+      <x>12</x>
+      <y>20</y>
+      <width>70</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>AdjustInY_RBV</name>
+      <pv_name>$(P)$(R)AdjustInY_RBV</pv_name>
+      <x>87</x>
+      <y>20</y>
+      <width>70</width>
     </widget>
   </widget>
   <widget type="group" version="3.0.0">
