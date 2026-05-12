@@ -46,7 +46,6 @@ record(longout, "$(P)$(R)AdjustInY") {
     field(DTYP, "stream")
     field(OUT, "@mrc-lbs-compact.proto setAdjustIn($(S),y) $(PORT)")
     field(EGU, "mV")
-    field(SCAN, "1 second")
 }
 
 record(longin, "$(P)$(R)AdjustInY_RBV") {
@@ -54,4 +53,5 @@ record(longin, "$(P)$(R)AdjustInY_RBV") {
     field(DTYP, "stream")
     field(INP, "@mrc-lbs-compact.proto getAdjustIn($(S),y) $(PORT)")
     field(EGU, "mV")
+    field(SCAN, "1 second")
 }
