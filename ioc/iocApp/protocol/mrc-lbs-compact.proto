@@ -7,8 +7,8 @@ OutTerminator = ";";
 # memory
 startSetHold {
     out "SSH\$1";
-    in "0";
-    @mismatch { in "1"; }
+    in "\0";
+    @mismatch { in "\x01"; }
 }
 
 # Clear Set & Hold
@@ -16,8 +16,8 @@ startSetHold {
 # of stage s.
 clearSetHold {
     out "CSH\$1";
-    in "0";
-    @mismatch { in "1"; }
+    in "\0";
+    @mismatch { in "\x01"; }
 }
 
 # Set Adjust-In
@@ -27,8 +27,8 @@ clearSetHold {
 # Value is stored in non-volatile memory.
 adjustIn {
     out "SAI\$1\$2%.2r";
-    in "0";
-    @mismatch { in "1"; }
+    in "\0";
+    @mismatch { in "\x01"; }
 }
 
 # Get Status Flag
@@ -36,7 +36,7 @@ adjustIn {
 # Returns unsigned char representing EF A2 A1 OnOff2 OnOff1 Adj2 Adj1 PF
 getStatusFlag {
     out "GSF";
-    in "0";
+    in "\0";
     in "%01r";
 }
 
