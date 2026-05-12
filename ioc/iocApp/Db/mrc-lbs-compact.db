@@ -5,7 +5,7 @@ record(mbbiDirect, "$(P)GetStatusFlag") {
     field(PINI, "YES")
 }
 
-record(stringout, "$(P)$(R)Debug") {
+record(stringout, "$(P)Debug") {
     field(DESC, "Generic command interface")
     field(DTYP, "stream")
     field(OUT,  "@mrc-lbs-compact.proto debug($(P)) $(PORT)")
