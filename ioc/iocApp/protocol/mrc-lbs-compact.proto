@@ -36,7 +36,7 @@ setAdjustIn {
 getAdjustIn {
     out "GAI\$1\$2";
     in "\0";
-    in "%.2r";
+    in "%2r";
 }
 
 # Get Status Flag
