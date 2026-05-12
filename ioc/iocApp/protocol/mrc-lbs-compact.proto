@@ -45,5 +45,5 @@ getStatusFlag {
 # After processing finishes, the record contains the reply.
 debug {
     ExtraInput = Ignore;
-    out "%s"; in "%(DebugLine1)39c"; in "%(DebugLine2)39c"; in "%(DebugLine3)39c"; 
+    out "%s"; in "%(\$1DebugLine1)39c"; in "%(\$1DebugLine2)39c"; in "%(\$1DebugLine3)39c";
 }
