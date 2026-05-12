@@ -21,7 +21,7 @@ record(bo, "$(P)$(R)ClearSetAndHold") {
     field(ZNAM, "DoNotStop")
 }
 
-# Set Adjust-In
+# Adjust-In
 # This command allows to align the laser beam electronically. An offset o is 
 # added to the detector signal to shift the target position for the closed loop
 # stabilization. -5000 ≤ o ≤ 5000, o = 0 for external adjustment.
@@ -29,13 +29,29 @@ record(bo, "$(P)$(R)ClearSetAndHold") {
 record(longout, "$(P)$(R)AdjustInX") {
     field(DESC, "Set Adjust-In X")
     field(DTYP, "stream")
-    field(OUT, "@mrc-lbs-compact.proto adjustIn($(S),x) $(PORT)")
+    field(OUT, "@mrc-lbs-compact.proto setAdjustIn($(S),x) $(PORT)")
     field(EGU, "mV")
+}
+
+record(longin, "$(P)$(R)AdjustInX_RBV") {
+    field(DESC, "Read Adjust-In X")
+    field(DTYP, "stream")
+    field(INP, "@mrc-lbs-compact.proto getAdjustIn($(S),x) $(PORT)")
+    field(EGU, "mV")
+    field(SCAN, "1 second")
 }
 
 record(longout, "$(P)$(R)AdjustInY") {
     field(DESC, "Set Adjust-In Y")
     field(DTYP, "stream")
-    field(OUT, "@mrc-lbs-compact.proto adjustIn($(S),y) $(PORT)")
+    field(OUT, "@mrc-lbs-compact.proto setAdjustIn($(S),y) $(PORT)")
+    field(EGU, "mV")
+    field(SCAN, "1 second")
+}
+
+record(longin, "$(P)$(R)AdjustInY_RBV") {
+    field(DESC, "Read Adjust-In Y")
+    field(DTYP, "stream")
+    field(INP, "@mrc-lbs-compact.proto getAdjustIn($(S),y) $(PORT)")
     field(EGU, "mV")
 }

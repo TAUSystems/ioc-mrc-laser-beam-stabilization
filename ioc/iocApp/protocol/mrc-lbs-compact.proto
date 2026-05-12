@@ -25,10 +25,18 @@ clearSetHold {
 # added to the detector signal to shift the target position for the closed loop
 # stabilization. -5000 ≤ o ≤ 5000, o = 0 for external adjustment.
 # Value is stored in non-volatile memory.
-adjustIn {
+setAdjustIn {
     out "SAI\$1\$2%.2r";
     in "\0";
     @mismatch { in "\x01"; }
+}
+
+# Get Adjust-In
+# Request for offset value of the Adjust-In function.
+getAdjustIn {
+    out "GAI\$1\$2";
+    in "\0";
+    in "%.2r";
 }
 
 # Get Status Flag

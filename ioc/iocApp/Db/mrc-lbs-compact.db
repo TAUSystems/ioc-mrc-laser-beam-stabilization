@@ -3,6 +3,7 @@ record(mbbiDirect, "$(P)GetStatusFlag") {
     field(DTYP, "stream")
     field(INP, "@mrc-lbs-compact.proto getStatusFlag $(PORT)")
     field(PINI, "YES")
+    field(SCAN, "1 second")
 }
 
 record(stringout, "$(P)Debug") {
