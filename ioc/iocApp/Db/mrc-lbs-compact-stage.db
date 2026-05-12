@@ -55,3 +55,48 @@ record(longin, "$(P)$(R)AdjustInY_RBV") {
     field(EGU, "mV")
     field(SCAN, "1 second")
 }
+
+
+# Drive actuator
+#
+# This command allows to drive the piezo actuators directly while the
+# stabilization is deactivated. That way the start position of the piezo
+# actuators before activating the stabilization can be optimized to achieve a
+# faster settling time in stabilised position. -5000 ≤ d ≤ 5000. The values for
+# d will be cleared automatically when the concerning stage s is turned on or
+# the system is turned off. 
+#
+# Remark: Setting a drive value will only have a lasting effect if the 
+# stabilization on the stage is inactive. In case CEA is used to deactivate the 
+# stage s, please wait for at least 600ms before setting a drive value
+#
+# Unlike Adjust-In, the Get Drive Actuator serial command does not take stage and 
+# axis arguments, but receives all values for both axes and stages in a single
+# response.
+# the $(P)GetDriveActuator record in mrc-lbs-compact.db periodically gets these
+# values, so obtain them from there. 
+record(longout, "$(P)$(R)DriveMirrorX") {
+    field(DESC, "Set Drive Actuator X")
+    field(DTYP, "stream")
+    field(OUT, "@mrc-lbs-compact.proto setDriveActuator($(S),x) $(PORT)")
+    field(EGU, "mV")
+}
+
+record(longin, "$(P)$(R)DriveMirrorX_RBV") {
+    field(DESC, "Drive Actuator X readback")
+    field(INP, "$(P)DriveActuatorS$(S)X CP")
+    field(EGU, "mV")
+}
+
+record(longout, "$(P)$(R)DriveMirrorY") {
+    field(DESC, "Set Drive Actuator Y")
+    field(DTYP, "stream")
+    field(OUT, "@mrc-lbs-compact.proto setDriveActuator($(S),y) $(PORT)")
+    field(EGU, "mV")
+}
+
+record(longin, "$(P)$(R)DriveMirrorY_RBV") {
+    field(DESC, "Drive Actuator Y readback")
+    field(INP, "$(P)DriveActuatorS$(S)Y CP")
+    field(EGU, "mV")
+}

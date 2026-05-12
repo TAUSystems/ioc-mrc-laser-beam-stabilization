@@ -6,6 +6,35 @@ record(mbbiDirect, "$(P)GetStatusFlag") {
     field(SCAN, "1 second")
 }
 
+# Unlike Adjust-In, the Get Drive Actuator serial command does not take stage and 
+# axis arguments, but receives all values for both axes and stages in a single
+# response, so run it at the controller level and have the stage records pull the 
+# stage values from here.
+record(int64in, "$(P)GetDriveActuator") {
+    field(DESC, "Get Drive Actuator values")
+    field(DTYP, "stream")
+    field(INP, "@mrc-lbs-compact.proto getDriveActuator($(P)DriveActuatorS1X,$(P)DriveActuatorS1Y,$(P)DriveActuatorS2X,$(P)DriveActuatorS2Y) $(PORT)")
+    field(EGU, "mV")
+    field(SCAN, "1 second")
+}
+
+record(longin, "$(P)DriveActuatorS1X") {
+    field(DESC, "Drive Actuator Stage 1 X readback")
+    field(EGU, "mV")
+}
+record(longin, "$(P)DriveActuatorS1Y") {
+    field(DESC, "Drive Actuator Stage 1 Y readback")
+    field(EGU, "mV")
+}
+record(longin, "$(P)DriveActuatorS2X") {
+    field(DESC, "Drive Actuator Stage 2 X readback")
+    field(EGU, "mV")
+}
+record(longin, "$(P)DriveActuatorS2Y") {
+    field(DESC, "Drive Actuator Stage 2 Y readback")
+    field(EGU, "mV")
+}
+
 record(stringout, "$(P)Debug") {
     field(DESC, "Generic command interface")
     field(DTYP, "stream")

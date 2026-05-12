@@ -39,6 +39,17 @@ getAdjustIn {
     in "%2r";
 }
 
+# Get Drive Actuator
+# Gets piezo mirror drive actuator values for both stages and both axes all at 
+# once, in the order stage 1 x, stage 1 y, stage 2 x, stage 2 y. 
+# this protocol should be called with as arguments the names of the PVs to store 
+# the 4 values
+getDriveActuator {
+    out "GDA";
+    in "\0";
+    in "%(\$1)2r%(\$2)2r%(\$3)2r%(\$4)2r";
+}
+
 # Get Status Flag
 # Request for system status information
 # Returns unsigned char representing EF A2 A1 OnOff2 OnOff1 Adj2 Adj1 PF
