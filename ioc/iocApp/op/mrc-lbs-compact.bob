@@ -2,7 +2,7 @@
 <display version="2.0.0">
   <name>MRC Compact</name>
   <width>460</width>
-  <height>282</height>
+  <height>230</height>
   <widget type="template" version="2.0.0">
     <name>StageInstances</name>
     <file>mrc-lbs-compact-stage.bob</file>
@@ -21,7 +21,7 @@
       </instance>
     </instances>
     <width>390</width>
-    <height>282</height>
+    <height>230</height>
     <horizontal>true</horizontal>
   </widget>
   <widget type="label" version="2.0.0">

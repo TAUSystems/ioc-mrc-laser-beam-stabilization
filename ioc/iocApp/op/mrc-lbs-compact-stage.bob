@@ -2,7 +2,7 @@
 <display version="2.0.0">
   <name>MRC Compact Stage</name>
   <width>190</width>
-  <height>282</height>
+  <height>230</height>
   <widget type="label" version="2.0.0">
     <name>Title</name>
     <class>SECTION</class>
@@ -17,44 +17,43 @@
     </foreground_color>
     <transparent use_class="true">true</transparent>
   </widget>
-  <widget type="slide_button" version="2.0.0">
-    <name>SetHold</name>
-    <label>Set &amp; Hold</label>
+  <widget type="group" version="3.0.0">
+    <name>Set &amp; Hold</name>
     <y>20</y>
-    <width>130</width>
-    <enabled>false</enabled>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>StartSetHoldButton</name>
-    <actions>
-      <action type="write_pv">
-        <description>Write PV</description>
-        <pv_name>$(P)$(R)StartSetAndHold</pv_name>
-        <value>1</value>
-      </action>
-    </actions>
-    <text>Start Set &amp; Hold</text>
-    <y>50</y>
-    <width>130</width>
-    <tooltip>$(actions)</tooltip>
-  </widget>
-  <widget type="action_button" version="3.0.0">
-    <name>ClearSetHoldButton</name>
-    <actions>
-      <action type="write_pv">
-        <description>Write PV</description>
-        <pv_name>$(P)$(R)ClearSetAndHold</pv_name>
-        <value>1</value>
-      </action>
-    </actions>
-    <text>Clear Set &amp; Hold</text>
-    <y>90</y>
-    <width>130</width>
-    <tooltip>$(actions)</tooltip>
+    <width>190</width>
+    <height>68</height>
+    <transparent>true</transparent>
+    <widget type="action_button" version="3.0.0">
+      <name>StartSetHoldButton</name>
+      <actions>
+        <action type="write_pv">
+          <description>Write PV</description>
+          <pv_name>$(P)$(R)StartSetAndHold</pv_name>
+          <value>1</value>
+        </action>
+      </actions>
+      <text>Start</text>
+      <width>72</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>ClearSetHoldButton</name>
+      <actions>
+        <action type="write_pv">
+          <description>Write PV</description>
+          <pv_name>$(P)$(R)ClearSetAndHold</pv_name>
+          <value>1</value>
+        </action>
+      </actions>
+      <text>Clear</text>
+      <x>82</x>
+      <width>72</width>
+      <tooltip>$(actions)</tooltip>
+    </widget>
   </widget>
   <widget type="group" version="3.0.0">
     <name>Adjust-in</name>
-    <y>130</y>
+    <y>78</y>
     <width>190</width>
     <height>76</height>
     <transparent>true</transparent>
@@ -99,28 +98,27 @@
   </widget>
   <widget type="group" version="3.0.0">
     <name>Drive Mirror</name>
-    <y>206</y>
-    <width>120</width>
+    <y>154</y>
+    <width>190</width>
     <height>76</height>
     <transparent>true</transparent>
-    <tooltip>Drive mirror directly</tooltip>
-    <widget type="textupdate" version="2.0.0">
-      <name>DriveMirrorX</name>
-      <pv_name>$(P)$(R)DriveMirrorX</pv_name>
-      <x>20</x>
-      <width>62</width>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>DriveMirrorY</name>
-      <pv_name>$(P)$(R)DriveMirrorY</pv_name>
-      <x>20</x>
-      <y>20</y>
-      <width>62</width>
-    </widget>
+    <tooltip>Drive piezo actuators directly while stabilization off</tooltip>
     <widget type="label" version="2.0.0">
       <name>DriveMirrorXLabel</name>
       <text>X</text>
       <width>10</width>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>DriveMirrorX</name>
+      <pv_name>$(P)$(R)DriveMirrorX</pv_name>
+      <x>12</x>
+      <width>70</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>DriveMirrorX_RBV</name>
+      <pv_name>$(P)$(R)DriverMirrorX_RBV</pv_name>
+      <x>87</x>
+      <width>70</width>
     </widget>
     <widget type="label" version="2.0.0">
       <name>DriveMirrorYLabel</name>
@@ -128,16 +126,19 @@
       <y>20</y>
       <width>10</width>
     </widget>
-  </widget>
-  <widget type="rectangle" version="2.0.0">
-    <name>Rectangle</name>
-    <y>211</y>
-    <width>120</width>
-    <height>64</height>
-    <line_width>0</line_width>
-    <background_color>
-      <color red="0" green="0" blue="0" alpha="60">
-      </color>
-    </background_color>
+    <widget type="textentry" version="3.0.0">
+      <name>DriveMirrorY</name>
+      <pv_name>$(P)$(R)DriveMirrorY</pv_name>
+      <x>12</x>
+      <y>20</y>
+      <width>70</width>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>DriveMirrorY_RBV</name>
+      <pv_name>$(P)$(R)DriveMirrorY_RBV</pv_name>
+      <x>87</x>
+      <y>20</y>
+      <width>70</width>
+    </widget>
   </widget>
 </display>
