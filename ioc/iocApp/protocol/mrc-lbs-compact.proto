@@ -25,6 +25,9 @@ clearSetHold {
 # added to the detector signal to shift the target position for the closed loop
 # stabilization. -5000 ≤ o ≤ 5000, o = 0 for external adjustment.
 # Value is stored in non-volatile memory.
+# usage:
+#   setAdjustIn(s,a), where s is stage number (1 or 2) and a is axis (x or y)
+#
 setAdjustIn {
     out "SAI\$1\$2%.2r";
     in "\0";
@@ -38,6 +41,28 @@ getAdjustIn {
     in "\0";
     in "%2r";
 }
+
+# Set Drive Actuator
+# This command allows to drive the piezo actuators directly while the
+# stabilization is deactivated. That way the start position of the piezo
+# actuators before activating the stabilization can be optimized to achieve a
+# faster settling time in stabilised position. -5000 ≤ d ≤ 5000. The values for
+# d will be cleared automatically when the concerning stage s is turned on or
+# the system is turned off. 
+#
+# Remark: Setting a drive value will only have a lasting effect if the 
+# stabilization on the stage is inactive. In case CEA is used to deactivate the 
+# stage s, please wait for at least 600ms before setting a drive value
+#
+# usage:
+#   setDriveActuator(s,a), where s is stage number (1 or 2) and a is axis (x or y)
+#
+setDriveActuator {
+    out "SDA\$1\$2%.2r";
+    in "\0";
+    @mismatch { in "\x01"; }
+}
+
 
 # Get Drive Actuator
 # Gets piezo mirror drive actuator values for both stages and both axes all at 
