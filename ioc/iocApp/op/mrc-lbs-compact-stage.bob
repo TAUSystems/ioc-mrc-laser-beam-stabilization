@@ -116,7 +116,7 @@
     </widget>
     <widget type="textupdate" version="2.0.0">
       <name>DriveMirrorX_RBV</name>
-      <pv_name>$(P)$(R)DriverMirrorX_RBV</pv_name>
+      <pv_name>$(P)$(R)DriveMirrorX_RBV</pv_name>
       <x>87</x>
       <width>70</width>
     </widget>
